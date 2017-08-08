@@ -1,6 +1,6 @@
 {
   "name": "mongo-express-xml",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Provides a way to interact with a MongoDB database through http requests. The responses of the requests are provided in XML. The express framework is required.",
   "main": "index.js",
   "scripts": {
