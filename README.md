@@ -1,4 +1,4 @@
-# mongodb-crud-express-xml
+# mongo-express-xml
 
 This package provides a way to interact with a MongoDB database through http requests (for instance a browser). The responses of the requests are provided in XML. The [express framework](https://www.npmjs.com/package/express) is required.
 
