@@ -7,9 +7,9 @@ This package provides a way to interact with a MongoDB database through http req
 ```
 const express = require('express');
 const app = express();
-const mongoXML = require('mongodb-curl-express-xml')('mongodb://uri');
+const mongoXml = require('mongo-express-xml')('mongodb://uri');
 
-app.get('/', mongoXML);
+app.get('/', mongoXml);
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
