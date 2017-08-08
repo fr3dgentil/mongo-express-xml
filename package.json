@@ -1,0 +1,30 @@
+{
+  "name": "mongo-express-xml",
+  "version": "1.0.0",
+  "description": "Provides a way to interact with a MongoDB database through http requests. The responses of the requests are provided in XML. The express framework is required.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "keywords": [
+    "crud",
+    "mongodb",
+    "express",
+    "xml"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fr3dgentil/mongo-express-xml.git"
+  },
+  "author": "Frédéric Gentil",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "express": "^4.15.4",
+    "minimal-either-monad-with-errors-handling": "^1.0.1",
+    "mongodb": "^2.2.30",
+    "object-to-xml": "^1.1.0",
+    "pluralize": "^6.0.0",
+    "ramda": "^0.24.1"
+  }
+}
