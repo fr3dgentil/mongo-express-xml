@@ -2,14 +2,13 @@
 
 This package provides a way to interact with a MongoDB database through http requests (for instance a browser). The responses of the requests are provided in XML. The [express framework](https://www.npmjs.com/package/express) is required.
 
-## Usage
+## Usage Exemple
 
 ```
-const express = require('express');
-const app = express();
-const mongoXml = require('mongo-express-xml')('mongodb://uri');
+const app = require('express')();
+const mongoXml = require('mongo-express-xml');
 
-app.get('/', mongoXml);
+app.get('/', mongoXml('mongodb://uri'));
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
@@ -45,4 +44,4 @@ You can provide a [MongoDB URI](https://docs.mongodb.com/manual/reference/connec
 
 ## Example:
 
-`http://localhost?col=people&action=find&args=[{"name":"Bob"},{"_id":0}]`
+`http://localhost?col=people&action=find&args=[{"name":"Bob"},{"_id":1}]`

@@ -4,15 +4,15 @@ var colors = require('colors');
 module.exports = uri => col => action => args => new Promise(function(resolve, reject) {
 
 	uri = uri.search(/mongodb:\/\//) === 0 ? uri : 'mongodb://' + uri;
-	
+
 	MongoClient.connect(uri, function(err, db) {
 		if (err) {
-			var errorMessage = 'The attempt to connect to the database failed.';
+			var errorMessage = 'The attempt to connect to the database failed.'+
+			' Please check the URI.';
 			console.log(errorMessage.red);
-			console.log(uri.blue);
+			console.log(uri);
 			return reject(errorMessage);
 		}
-		console.log("Connected correctly to MongoDB server!".green);
 
 		if(action==='find'){
 
@@ -35,8 +35,6 @@ module.exports = uri => col => action => args => new Promise(function(resolve, r
 				resolve({result: r.result});
 			});
 		}
-
-
 
 		db.close();
 	});

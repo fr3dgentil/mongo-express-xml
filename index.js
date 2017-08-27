@@ -29,8 +29,8 @@ module.exports = defaultUri => function(req, res) {
 		}
 		var l = missing.length;
 		if (!l) return query;
-		else throw `The ${plur('field',l)} ${missing.join(' & ')}` +
-			`${plr('is',l)} missing.`;
+		else throw `The ${plur('field',l)} <${missing.join(', ')}> ` +
+			`${plur('is',l)} missing.`;
 	};
 	// -------------------------
 	// CheckAction
@@ -70,7 +70,7 @@ module.exports = defaultUri => function(req, res) {
 	//------------------------
 	// removeUriQuotes
 	//------------------------
-	var removeUriQuotes = query => {
+	var removeUriQuotesIfPresent = query => {
 		var doubleQuotes = /^".*"$/,
 			singleQuotes = /^'.*'$/;
 		if (query.uri.search(doubleQuotes) === 0 ||
@@ -79,16 +79,6 @@ module.exports = defaultUri => function(req, res) {
 			query.uri = query.uri.match(withoutQuotes)[0];
 		}
 		return query;
-	}
-	//------------------------
-	// uriSyntaxValidation
-	//------------------------
-	var uriSyntaxValidation = query => {
-		var wLog = /^(mongodb:\/\/)?[A-Za-z\d-_.]*:[A-Za-z\d-_.]*@[A-Za-z\d-_.]*\/[A-Za-z\d-_.]*/;
-		var wtLog = /^(mongodb:\/\/)?[A-Za-z\d-_.]*\/[A-Za-z\d-_.]*/;
-		if (query.uri.search(wLog) === 0 || 
-			query.uri.search(wtLog) === 0) return query;
-		else throw 'The URI is not valid.';
 	}
 	//------------------------
 	// dbResquest & sendXML
@@ -101,11 +91,10 @@ module.exports = defaultUri => function(req, res) {
 
 	//------------------------
 	Either.fromNullable(req.query)
-		.map(parseJsonArgs)
 		.map(chooseUri(defaultUri))
-		.map(removeUriQuotes)
-		.map(uriSyntaxValidation)
-		.map(checkPresence(['col', 'action']))
+		.map(removeUriQuotesIfPresent)
+		.map(checkPresence(['args','col', 'action']))
+		.map(parseJsonArgs)
 		.map(checkAction)
 		.map(dbRequest(sendXML))
 		.orElse(sendXML)

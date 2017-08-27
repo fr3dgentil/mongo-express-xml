@@ -1,23 +1,35 @@
 {
-  "name": "mongo-express-xml",
-  "version": "1.0.1",
-  "description": "Provides a way to interact with a MongoDB database through http requests. The responses of the requests are provided in XML. The express framework is required.",
-  "main": "index.js",
-  "scripts": {
-    "test": "node test"
+  "_from": "mongo-express-xml",
+  "_id": "mongo-express-xml@1.0.2",
+  "_inBundle": false,
+  "_integrity": "sha512-8lpbHSGqNiOfxibu8TgxXxo4e4dbb4TEtYbGjL1zgahnIAYItRHYhb56FqMtMM5Nytl+JNtq5VE5A+7Y17VTWw==",
+  "_location": "/mongo-express-xml",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "mongo-express-xml",
+    "name": "mongo-express-xml",
+    "escapedName": "mongo-express-xml",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
   },
-  "keywords": [
-    "crud",
-    "mongodb",
-    "express",
-    "xml"
+  "_requiredBy": [
+    "#USER",
+    "/"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fr3dgentil/mongo-express-xml.git"
+  "_resolved": "https://registry.npmjs.org/mongo-express-xml/-/mongo-express-xml-1.0.2.tgz",
+  "_shasum": "6ec7b1e13891efd24718266a1cbdadc90eb70e44",
+  "_spec": "mongo-express-xml",
+  "_where": "/home/fred/stuffs/node/twilioApp",
+  "author": {
+    "name": "Frédéric Gentil"
   },
-  "author": "Frédéric Gentil",
-  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fr3dgentil/mongo-express-xml/issues"
+  },
+  "bundleDependencies": false,
   "dependencies": {
     "colors": "^1.1.2",
     "express": "^4.15.4",
@@ -26,5 +38,25 @@
     "object-to-xml": "^1.1.0",
     "pluralize": "^6.0.0",
     "ramda": "^0.24.1"
-  }
+  },
+  "deprecated": false,
+  "description": "Provides a way to interact with a MongoDB database through http requests. The responses of the requests are provided in XML. The express framework is required.",
+  "homepage": "https://github.com/fr3dgentil/mongo-express-xml",
+  "keywords": [
+    "crud",
+    "mongodb",
+    "express",
+    "xml"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "mongo-express-xml",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fr3dgentil/mongo-express-xml.git"
+  },
+  "scripts": {
+    "test": "node test"
+  },
+  "version": "1.0.3"
 }
